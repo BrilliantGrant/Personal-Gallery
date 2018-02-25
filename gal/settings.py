@@ -52,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'gal.urls'
+ROOT_URLCONF = 'galleria.urls'
 
 TEMPLATES = [
     {
