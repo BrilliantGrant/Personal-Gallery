@@ -1,0 +1,94 @@
+{% extends 'base.html' %} {% block content %}
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+<style >
+  .item {
+            width: 600px;
+            height: 400px;
+            display: block;
+            margin: 100px auto;
+            position: relative;
+        }
+
+            .item img {
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+            }
+
+            .item .overlay {
+                position: absolute;
+                left: 0%;
+              top:0;
+                width: 0%;
+                height: 100%;
+                background-color: rgba(19, 19, 19, 0.5);
+                -webkit-transition: all 1s ease;
+                -moz-transition: all 1s ease-in;
+                -o-transition: all 1s ease-in-out;
+                transition: all 1s ease;
+                visibility:hidden;
+                overflow:hidden;
+                
+            }
+
+                .item .overlay h1 {
+                    color: #fff;
+                    font-family: Arial;
+                    text-align: center;
+                    vertical-align: central;
+                    padding: 0;
+                    margin: 0;
+                    line-height: 400px;
+                }
+
+            .item:hover .overlay {
+                top:0;
+              left:0;
+                visibility:visible;
+                width:100%;
+                height:100%;
+            }
+           /* body{
+              background-color: black;
+            }*/
+</style>
+
+<div class="container" style="float: left; margin-left: -250px;">
+ <div class="item">
+       <div class="left-img2"><img src="{{photo.image.url}}" alt="" /></div>
+        <div class="overlay"><h1>Gallery</h1></div>
+
+    </div>
+
+
+
+<div class="product" style="width: 600px; height: 400px; float: right; margin-right: -340px; margin-top: -500px; background-color: #031428; border-top-right-radius: 90px;border-bottom-left-radius: 100px">
+  <!-- <div class="left-img2"><img src="{{photo.image.url}}" alt="" /></div> -->
+  <!-- <div class="right-content">
+    <div class="content-arrow"></div> -->
+    <div class="content-container">
+      <h2 style="">{{photo.name|upper}}</h2>
+      <div class="bot-view">
+        <div class="date" style="">
+          {{photo.time_uloaded}} / & nbsp<span class="under">{{photo.location_taken}}</span>
+        </div>
+        
+        <div class="info" style=" color:white">
+          <div>
+            <div class="row" style="font-size: 20px;font-family: 'Crimson Text', serif;">
+     <p>{{photo.descripton}}</p>
+   </div>
+         
+          <div class="footer">
+            <div id="buttons">
+              <a href="#" class="btn btn-default btn-block">Copy Image link  &nbsp<i class="glyphicon glyphicon-paperclip"></i>
+  </a></div>
+            <p>{{photo.categories.}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+  {% endblock %}

@@ -1,0 +1,33 @@
+/*<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<div class="w3-container w3-teal">
+  <h1>Summer 2015</h1>
+</div>
+
+<div class="w3-row-padding w3-margin-top">
+  <div style="width:100%" class="w3-third" >
+    <div class="w3-card" style="background-color:  black">
+  <div class="wrap">
+    {% for photo_item in photos%}
+    <a href="{% url 'myPhoto' photo_item.id %}" >
+    <div class="box" >
+      <div class="boxInner" style="width:100%">
+        <img src="{{photo_item.image.url}}"  class="img-responsive" ">
+        <div class="titleBox">{{photo_item.name|upper}}</div>
+
+      </div>
+
+    </div>
+  </a>
+   
+    {% endfor %}
+
+  </div>
+</script>
+</section>
+
+{% endblock %}
+*/

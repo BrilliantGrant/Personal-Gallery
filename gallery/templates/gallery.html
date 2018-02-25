@@ -1,0 +1,34 @@
+{% extends 'base.html' %} {% block content %}
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+<body>
+
+<div class="w3-container w3-teal" style="background-color: black">
+  <h1>Summer 2015</h1>
+</div>
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+<section class="no-touch">
+ <div class="w3-card" style="background-color:  black; margin-top: -100px">
+  <div class="wrap" style="height: 500px" >
+
+    {% for photo_item in photos%}
+
+    <a href="{% url 'myPhoto' photo_item.id %}">
+     
+    <div class="box">
+       <div class="titleBox" style=" color: white; font-family: 'Crimson Text', serif;margin-top: -5px">{{photo_item.name|upper}}</div>
+      <div class="boxInner">
+        <img src="{{photo_item.image.url}}"  class="img-responsive" style="margin-bottom: -90px">
+        
+      </div>
+
+    </div>
+   
+    {% endfor %}
+
+  </div>
+</script>
+</section>
+
+{% endblock %}
