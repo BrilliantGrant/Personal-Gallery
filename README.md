@@ -47,7 +47,7 @@ As a user of the application i should be able to:
 ```$ source virtual/bin/activate```
 * Atleast have a computer or a laptop
 * Have an internet connection
-* Visit
+* Visit https://brilliant-gallery.herokuapp.com/
 
 
 
