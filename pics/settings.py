@@ -52,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'galleria.urls'
+ROOT_URLCONF = 'pics.urls'
 
 TEMPLATES = [
     {
@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'galleria.wsgi.application'
+WSGI_APPLICATION = 'pics.wsgi.application'
 
 
 
