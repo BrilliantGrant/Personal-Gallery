@@ -1,31 +1,11 @@
 from django.test import TestCase
 import datetime as dt
-# Create your tests here.
 from .models import Photos, categories, Location
-
-class LocationTestClass(TestCase):
-    def setUp(self):
-        self.location = Location(name = 'Ngong')
-
-    def test_instance(self):
-        self.assertTrue(isinstance(self.location, Location))
-
-    def test_save_method(self):
-        self.location.save_location()
-        locations = Location.objects.all()
-        self.assertTrue(len(locations)>0)
-
-    def test_delete_method(self):
-        self.location.save_location()
-        locations = Location.objects.all()
-        self.location.delete_location()
-        locations = Location.objects.all()
-        self.assertTrue(len(locations)==0)
 
 
 class CategoriesTestClass(TestCase):
     def setUp(self):
-        self.category = categories(name='nature')
+        self.category = categories(name='people')
 
     def test_category_instance(self):
         self.assertTrue(isinstance(self.category, categories))
@@ -43,7 +23,7 @@ class CategoriesTestClass(TestCase):
 
 class PhotosTestClass(TestCase):
     def setUp(self):
-        self.photo = Photos(image='imageurl', name='nature', descripton='the beautiful nature')
+        self.photo = Photos(image='imageurl', name='people', descripton='the people of Kenya')
 
     def test_photo_instance(self):
         self.assertTrue(isinstance(self.photo, Photos))
@@ -59,3 +39,22 @@ class PhotosTestClass(TestCase):
         self.photo.delete_image()
         photos = Photos.objects.all()
         self.assertTrue(len(photos)==0)
+
+class LocationTestClass(TestCase):
+    def setUp(self):
+        self.location = Location(name = 'London')
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.location, Location))
+
+    def test_save_method(self):
+        self.location.save_location()
+        locations = Location.objects.all()
+        self.assertTrue(len(locations)>0)
+
+    def test_delete_method(self):
+        self.location.save_location()
+        locations = Location.objects.all()
+        self.location.delete_location()
+        locations = Location.objects.all()
+        self.assertTrue(len(locations)==0)

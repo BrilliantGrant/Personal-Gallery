@@ -30,10 +30,11 @@ class categories(models.Model):
 class Photos(models.Model):
     image = models.ImageField(upload_to = 'photos/', null = True)
     name = models.CharField(max_length=30)
+    time_taken = models.DateTimeField(auto_now_add=True, null=True)
     descripton = models.TextField()
     location_taken = models.ForeignKey(Location, null=True)
     category = models.ManyToManyField(categories)
-    time_uloaded = models.DateTimeField(auto_now_add=True, null=True)
+  
 
     def save_image(self):
         self.save()
