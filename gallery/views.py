@@ -1,22 +1,22 @@
 from django.shortcuts import render, Http404
-from .models import Photos
+from .models import Images
 
-def single_photo(request, photo_id):
-    photo = Photos.objects.get(id=photo_id)
-    return render(request, 'photo.html', {'photo':photo})
+def single_image(request, image_id):
+    image = Images.objects.get(id=image_id)
+    return render(request, 'image.html', {'image':image})
 
 def search_results(request):
-    if 'photos' in request.GET and request.GET['photos']:
-        search_term = request.GET.get('photos')
-        searched_photo = Photos.search_by_title(search_term)
+    if 'images' in request.GET and request.GET['images']:
+        search_term = request.GET.get('images')
+        searched_image = Images.search_by_title(search_term)
         message = f"{search_term}"
-        return render(request, 'search.html', {"message":message, "photos":searched_photo})
+        return render(request, 'search.html', {"message":message, "images":searched_image})
     else:
-        message = 'You haven\'t searched for any photos.'
+        message = 'You haven\'t searched for any images.'
         return render(request, 'search.html', {"message":message})
 
 
 # Create your views here.
 def my_gallery(request):
-    photos = Photos.objects.all()
-    return render(request, 'gallery.html', {'photos':photos})
+    images = Images.objects.all()
+    return render(request, 'gallery.html', {'images':images})

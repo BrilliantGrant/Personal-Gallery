@@ -1,0 +1,91 @@
+{% extends 'base.html' %} {% block content %}
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+<style >
+
+.bri img {
+width: 100%;
+height: 100%;
+z-index: -1;
+}
+
+.bri .overlay {
+position: absolute;
+left: 0%;
+top:0;
+width: 0%;
+height: 100%;
+background-color: rgba(19, 19, 19, 0.5);
+-webkit-transition: all 1s ease;
+-moz-transition: all 1s ease-in;
+-o-transition: all 1s ease-in-out;
+transition: all 1s ease;
+visibility:hidden;
+overflow:hidden;
+
+}
+
+.bri .overlay h1 {
+color: #fff;
+font-family: Arial;
+text-align: center;
+vertical-align: central;
+padding: 0;
+margin: 0;
+line-height: 400px;
+}
+
+.bri:hover .overlay {
+top:0;
+left:0;
+visibility:visible;
+width:100%;
+height:100%;
+}
+.bri {
+width: 600px;
+height: 400px;
+display: block;
+margin: 100px auto;
+position: relative;
+ }
+
+</style>
+
+<div class="container" style="float: left; margin-left: -250px;">
+ <div class="bri">
+       <div class="left-img2"><img src="{{image.image.url}}" alt="" /></div>
+        <div class="overlay"><h1>Gallery</h1></div>
+
+    </div>
+
+
+
+<div class="product" style="width: 600px; height: 400px; float: right; margin-right: -340px; margin-top: -500px; background-color: #031428; border-top-right-radius: 90px;border-bottom-left-radius: 100px">
+  <!-- <div class="left-img2"><img src="{{photo.image.url}}" alt="" /></div> -->
+  <!-- <div class="right-content">
+    <div class="content-arrow"></div> -->
+    <div class="content-container">
+      <h2 style="">{{image.name|upper}}</h2>
+      <div class="bot-view">
+        <div class="date" style="">
+          {{image.time}} <span class="under">{{image.location}}</span>
+        </div>
+        
+        <div class="info" style=" color:white">
+          <div>
+            <div class="row" style="font-size: 20px;font-family: 'Crimson Text', serif; color: white">
+     <div>{{image.descripton}}<div>
+   </div>
+         
+          <div class="footer">
+            <div id="buttons">
+              
+            <div>{{image.categories.}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+  {% endblock %}
